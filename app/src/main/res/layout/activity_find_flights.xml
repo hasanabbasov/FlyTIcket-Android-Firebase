@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E2E4FF"
+    android:orientation="vertical"
+    tools:context=".FindFlightsActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="0.08"
+        android:paddingLeft="30dp"
+
+        >
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+
+            android:onClick="backstart"
+            app:srcCompat="@drawable/kisspng_airplane_aircraft_clip_art_portable_network_graphi_flying_plane_png_photos_png_5ba3da52e6fab1_0634090515374649149461"
+            />
+
+        <ImageButton
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="280dp"
+            android:background="#E2E4FF"
+            android:src="@drawable/ic_baseline_menu_24" />
+
+
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="0.20">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="0.3">
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:paddingLeft="30dp"
+                    android:paddingTop="5dp"
+                    android:text="Find flights that"
+                    android:textSize="40sp"
+                    android:textColor="#050000"/>
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:paddingLeft="30dp"
+                    android:paddingTop="45dp"
+                    android:text="suit your timing"
+                    android:textColor="#050000"
+                    android:textSize="40sp" />
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:paddingLeft="30dp"
+                    android:paddingTop="90dp"
+                    android:text="and budget"
+                    android:textColor="#050000"
+                    android:textSize="40sp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="5dp"
+        android:layout_weight="0.15">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/From"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+
+            >
+
+
+            <AutoCompleteTextView
+                android:id="@+id/act_From"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+
+                android:background="#E2E4FF"
+
+                android:hint="From"
+                android:textSize="20sp"
+                android:textStyle="normal" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/To"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+            android:layout_width="388dp"
+            android:layout_height="124dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:paddingLeft="30dp"
+            android:paddingTop="46dp"
+            android:paddingRight="30dp">
+
+
+            <AutoCompleteTextView
+                android:id="@+id/act_To"
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                android:background="#E2E4FF"
+
+                android:hint="To"
+
+                android:textSize="20sp"
+                android:textStyle="normal" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="0.1"
+        android:paddingLeft="30dp"
+        android:paddingTop="20dp"
+        android:paddingRight="30dp">
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#555365"
+            android:drawableRight="@drawable/ic_baseline_navigate_next_blue"
+            android:gravity="fill_vertical"
+            android:textColor="#DBDCFC"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="Continue"
+            android:onClick="nextselect"
+
+            app:backgroundTint="#555365" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:paddingLeft="30dp">
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/roboto_black"
+            android:text="Best Tours"
+            android:textColor="#050000"
+            android:textSize="18sp"
+            android:textStyle="bold"
+
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.25"
+        android:paddingLeft="5dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recents_recycler"
+            android:layout_width="390dp"
+            android:layout_height="250dp"
+
+
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_marginBottom="0dp" />
+    </RelativeLayout>
+
+
+</LinearLayout>

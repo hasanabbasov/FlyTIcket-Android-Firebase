@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "998467577174",
+    "project_id": "verticaltickets",
+    "storage_bucket": "verticaltickets.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:998467577174:android:6364d8533ebf9e0b2462f7",
+        "android_client_info": {
+          "package_name": "com.example.verticaltickets"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "998467577174-79cmosf6g2e4nktdgh26jrphp23mshsu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqw6CgCYsX136iW26ZyByQm1HzAsGzI_Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "998467577174-79cmosf6g2e4nktdgh26jrphp23mshsu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
