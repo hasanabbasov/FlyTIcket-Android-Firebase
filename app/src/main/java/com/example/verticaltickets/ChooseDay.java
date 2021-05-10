@@ -25,8 +25,21 @@ public class ChooseDay extends AppCompatActivity {
         initDatePicker();
         initDatePicker2();
         dateButton = findViewById(R.id.ucus);
-        dateButton2 = findViewById(R.id.inis);
+        dateButton.setText(getTodaysDate());
 
+        dateButton2 = findViewById(R.id.inis);
+        dateButton2.setText(getTodaysDate());
+
+    }
+
+    private String getTodaysDate() {
+
+        Calendar cal = Calendar.getInstance();
+        int year = cal.get(Calendar.YEAR);
+        int month = cal.get(Calendar.MONTH);
+        month = month +1;
+        int day = cal.get(Calendar.DAY_OF_MONTH);
+        return makeDateString(day, month, year);
     }
 
     //For ucus
@@ -133,10 +146,12 @@ public class ChooseDay extends AppCompatActivity {
 
     //For open Select Day Button
     public void openucus(View view) {
+
         datePickerDialog.show();
     }
 
-    public void opeinis(View view){
+    public void openinis(View view){
+
         datePickerDialog2.show();
     }
 }

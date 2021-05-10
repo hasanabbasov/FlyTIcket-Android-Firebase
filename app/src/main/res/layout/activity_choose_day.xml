@@ -87,7 +87,7 @@
                 android:textColor="@color/black"
                 style="?android:spinnerStyle"
                 android:id="@+id/ucus"
-                android:OnClick="openucus"
+                android:onClick="openucus"
                 >
 
             </Button>
@@ -123,7 +123,7 @@
                 android:textColor="@color/black"
                 style="?android:spinnerStyle"
                 android:id="@+id/inis"
-                android:OnClick="openinis"
+                android:onClick="openinis"
                 />
 
 
