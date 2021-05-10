@@ -169,7 +169,7 @@
             android:paddingTop="5dp"
             android:paddingBottom="5dp"
             android:text="Continue"
-            android:onClick="nextselect"
+           />/ android:onClick="nextselect"
 
             app:backgroundTint="#555365" />
 

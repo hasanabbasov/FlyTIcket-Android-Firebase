@@ -23,6 +23,7 @@ import io.perfmark.Tag;
 
 public class MainActivity extends AppCompatActivity {
 
+
     FirebaseDatabase database;
     DatabaseReference mRef;
     @Override
@@ -79,4 +80,13 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+ /* @Override
+    protected void onStart() {
+        super.onStart();
+
+        TextView textViewUser = (TextView) findViewById(R.id.textViewUser);
+        textViewUser.setText("Welcome: " + mAuth.getCurrentUser().getEmail());
+
+    }*/
+
 }

@@ -140,7 +140,7 @@ public class ChooseDay extends AppCompatActivity {
 
     //For back Button
     public void backfind(View view){
-        Intent intent = new Intent(this,FindFlightsActivity.class);
+        Intent intent = new Intent(this,MainPageActivity.class);
         startActivity(intent);
     }
 

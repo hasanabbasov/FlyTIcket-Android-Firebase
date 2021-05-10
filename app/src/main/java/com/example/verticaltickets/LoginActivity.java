@@ -31,7 +31,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         if (mAuth.getCurrentUser()!=null){
-            Intent mainIntent = new Intent(this, FindFlightsActivity.class);
+            Intent mainIntent = new Intent(this, MainPageActivity.class);
             startActivity(mainIntent);
 
         }
@@ -48,7 +48,7 @@ public class LoginActivity extends AppCompatActivity {
         EditText editTextPassword= (EditText) findViewById(R.id.login_editTextPassword);
         String password= editTextPassword.getText().toString();
 
-        Intent mainIntent = new Intent(this, FindFlightsActivity.class);
+        Intent mainIntent = new Intent(this, MainPageActivity.class);
         startActivity(mainIntent);
 
         mAuth.createUserWithEmailAndPassword(email,password)

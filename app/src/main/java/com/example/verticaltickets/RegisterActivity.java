@@ -36,6 +36,9 @@ public class RegisterActivity extends AppCompatActivity {
         EditText editTextPassword2 = (EditText) findViewById(R.id.editTextNumberPassword2);
         String password2 = editTextPassword2.getText().toString();
 
+        Intent mainIntent = new Intent(this, MainPageActivity.class);
+        startActivity(mainIntent);
+
         if (!password.equals(password2)) {
             Toast.makeText(RegisterActivity.this, "Password or Confirm password must be the same.", Toast.LENGTH_SHORT).show();
         }
@@ -46,6 +49,7 @@ public class RegisterActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()){
                                 FirebaseUser user = mAuth.getCurrentUser();
+                                startActivity(mainIntent);
                                 System.out.println(user.getEmail());
 
                             }
