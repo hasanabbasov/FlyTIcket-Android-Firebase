@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         database = FirebaseDatabase.getInstance();
-        mRef = database.getReference("baslik");
+        mRef = database.getReference("17 Haziran");
 
         mRef.setValue("icerik");
 

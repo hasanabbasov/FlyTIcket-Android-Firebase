@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.verticaltickets">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/kisspng_airplane_aircraft_clip_art_portable_network_graphi_flying_plane_png_photos_png_5ba3da52e6fab1_0634090515374649149461"
