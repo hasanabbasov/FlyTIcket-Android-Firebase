@@ -36,8 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         database = FirebaseDatabase.getInstance();
-        mRef = database.getReference("baki");
-        altRef = mRef.child("istanbul");
+
 
         mRef.setValue("Feb 15 2021");
 
