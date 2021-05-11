@@ -22,6 +22,7 @@ public class ChooseDay extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_day);
+
         initDatePicker();
         initDatePicker2();
         dateButton = findViewById(R.id.ucus);

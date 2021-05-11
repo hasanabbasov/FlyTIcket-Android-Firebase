@@ -1,9 +1,12 @@
 package com.example.verticaltickets;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -25,16 +28,18 @@ public class MainActivity extends AppCompatActivity {
 
 
     FirebaseDatabase database;
-    DatabaseReference mRef;
+    DatabaseReference mRef,altRef;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        database = FirebaseDatabase.getInstance();
-        mRef = database.getReference("baslik");
 
-        mRef.setValue("icerik");
+        database = FirebaseDatabase.getInstance();
+        mRef = database.getReference("baki");
+        altRef = mRef.child("istanbul");
+
+        mRef.setValue("Feb 15 2021");
 
     }
 
@@ -80,6 +85,16 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
 
     }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        if (getCurrentFocus() != null) {
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        }
+        return super.dispatchTouchEvent(ev);
+    }
+
  /* @Override
     protected void onStart() {
         super.onStart();
