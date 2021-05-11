@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E2E4FF"
+    android:background="@drawable/backgroundcloud"
     tools:context=".MainActivity">
 
     <TextView
@@ -49,16 +49,16 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
-        android:drawableRight="@drawable/ic_baseline_navigate_next_blue"
         android:layout_marginBottom="72dp"
-        android:background="#555365"
+        android:background="@drawable/button"
+        android:drawableRight="@drawable/ic_baseline_navigate_next_blue"
         android:gravity="fill_vertical"
         android:onClick="Transfer"
         android:paddingRight="30dp"
         android:text="Get Started"
-        android:textColor="#E2E4FF"
+        android:textColor="#FFFFFF"
         android:textSize="18sp"
-        app:backgroundTint="#555365"
+        app:backgroundTint="#696877"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

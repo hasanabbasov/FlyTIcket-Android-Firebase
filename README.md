@@ -4,3 +4,5 @@ Ilk main page
  Dropdown Menu ile From To secenekleri eklendi
  Navigation Menu ile profil menusu eklendi (ama program calistirildiginda hata veriyo duzeltilicek)
  Best tour kismina 3 aded recents_recycler eklendi 
+
+H- login ile register kısmına bazı değişiklikler eklendi forgot password ve email confirmation öelliği eklendi. ( hata veriyor çalıştırıldığında düzeltilecek) 

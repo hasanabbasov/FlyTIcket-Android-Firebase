@@ -1,5 +1,6 @@
 package com.example.verticaltickets;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -8,19 +9,30 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.Spinner;
 
 import com.example.verticaltickets.adapter.RecentsAdapter;
 import com.example.verticaltickets.model.RecentsData;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class MainPageActivity extends AppCompatActivity {
     //Initalize variable
@@ -29,44 +41,72 @@ public class MainPageActivity extends AppCompatActivity {
     RecyclerView recentRecycler;
     RecentsAdapter recentsAdapter;
 
-    TextInputLayout From;
-    AutoCompleteTextView act_From;
 
-    TextInputLayout To;
-    AutoCompleteTextView act_To;
 
-    ArrayList<String> arrayList;
-    ArrayAdapter<String> arrayAdapter;
+    //Spinner From To
+    Spinner spinner;
+    Spinner spinner1;
+    DatabaseReference databaseReference;
+    List<String> country;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
 
+
+        spinner = findViewById(R.id.spinner);
+        spinner1 = findViewById(R.id.spinner1);
+        country = new ArrayList<>();
+
+        databaseReference = FirebaseDatabase.getInstance().getReference();
+        databaseReference.child("tableCountry").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+           for (DataSnapshot chilSnapshot: snapshot.getChildren()) {
+               String spinnerCountry = chilSnapshot.child("country").getValue(String.class);
+               country.add(spinnerCountry);
+           }
+                ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>( MainPageActivity.this, android.R.layout.simple_spinner_item,country);
+                arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
+                spinner.setAdapter(arrayAdapter);
+                spinner1.setAdapter(arrayAdapter);
+
+            }
+
+
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
         //*******************
-        From = (TextInputLayout) findViewById(R.id.From);
-        act_From = (AutoCompleteTextView) findViewById(R.id.act_From);
 
-        To = (TextInputLayout) findViewById(R.id.To);
-        act_To = (AutoCompleteTextView) findViewById(R.id.act_To);
 
-        arrayList = new ArrayList<>();
-        arrayList.add("Baku");
-        arrayList.add("Baku");
-        arrayList.add("Baku");
-        arrayList.add("Baku");
-        arrayList.add("Baku");
-        arrayList.add("Baku");
-        arrayList.add("Baku");
 
-        arrayAdapter = new ArrayAdapter<>(getApplicationContext(), R.layout.support_simple_spinner_dropdown_item, arrayList);
 
-        act_From.setAdapter(arrayAdapter);
-        act_From.setThreshold(1);
+       /* arrayList = new ArrayList<>();
+        arrayList.add("Baku");
+        arrayList.add("Baku");
+        arrayList.add("Baku");
+        arrayList.add("Baku");
+        arrayList.add("Baku");
+        arrayList.add("Baku");
+        arrayList.add("Baku");*/
 
-        act_To.setAdapter(arrayAdapter);
-        act_To.setThreshold(1);
 
+
+
+
+
+
+       //**** Best Tour
         //add some dummy data in our model class
         List<RecentsData> recentsDataList = new ArrayList<>();
         recentsDataList.add(new RecentsData(" Baku", "From 300$", R.drawable.baki));
@@ -78,6 +118,7 @@ public class MainPageActivity extends AppCompatActivity {
         //Assign variable
         drawerLayout = findViewById(R.id.drawer_layout);
     }
+
 
     private void setRecentRecycler(List<RecentsData> recentsDataList) {
         recentRecycler = findViewById(R.id.recents_recycler);
@@ -184,5 +225,14 @@ public class MainPageActivity extends AppCompatActivity {
         super.onPause();
         //Close drawer
         closeDrawer(drawerLayout);
+    }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        if (getCurrentFocus() != null) {
+            InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        }
+        return super.dispatchTouchEvent(ev);
     }
 }

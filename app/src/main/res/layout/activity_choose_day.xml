@@ -4,10 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E2E4FF"
+    android:background="@drawable/gradient_background"
     android:orientation="vertical"
     tools:context=".ChooseDay"
     >
+
+
+
     //****************************
 <RelativeLayout
     android:layout_width="match_parent"
@@ -217,7 +220,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Search Flight"
-                android:background="#555365"
+                android:background="@drawable/button"
                 android:drawableRight="@drawable/ic_baseline_navigate_next_blue"
                 android:gravity="fill_vertical"
                 android:textColor="#DBDCFC"
