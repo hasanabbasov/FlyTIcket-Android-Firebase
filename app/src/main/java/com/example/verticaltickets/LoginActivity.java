@@ -27,7 +27,8 @@ public class LoginActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     Button mLoginbtn;
-    TextView mCreateBtn,forgotTextLink;
+    TextView mCreateBtn;
+    TextView forgotTextLink;
     EditText mMail, mPassword;
     ProgressBar progressBar;
 
@@ -67,20 +68,21 @@ public class LoginActivity extends AppCompatActivity {
                     return;
                 }
 
-                progressBar.setVisibility(View.VISIBLE);
+                //          progressBar.setVisibility(View.VISIBLE);
 
                 // Kullanıcıyı kayıt etme
 
                 mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                         if(task.isSuccessful()){
-                             Toast.makeText(LoginActivity.this, "Logged in successfully", Toast.LENGTH_SHORT).show();
-                         }
-                         else{
-                             Toast.makeText(LoginActivity.this, "Error!" +task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                             progressBar.setVisibility(View.GONE);
-                         }
+                        if(task.isSuccessful()){
+                            Toast.makeText(LoginActivity.this, "Logged in successfully", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(),MainPageActivity.class));
+                        }
+                        else{
+                            Toast.makeText(LoginActivity.this, "Error!" +task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            //                     progressBar.setVisibility(View.GONE);
+                        }
 
                     }
                 });
@@ -94,7 +96,10 @@ public class LoginActivity extends AppCompatActivity {
         mCreateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 startActivity(new Intent(getApplicationContext(),RegisterActivity.class));
+
+
             }
         });
 
@@ -142,7 +147,13 @@ public class LoginActivity extends AppCompatActivity {
 
 
     }
-    }
+
+    /*public void regis(View view){
+        Intent intent = new Intent(this, RegisterActivity.class);
+        startActivity(intent);
+
+    }*/
+}
 
 
 

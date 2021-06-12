@@ -15,7 +15,8 @@
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="0px"
-    android:layout_weight="0.1">
+    android:layout_weight="0.1"
+    >
 
     <ImageButton
         android:layout_width="80dp"
@@ -45,7 +46,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="o------------------------o"
+            android:text="o--------------------------o"
+
             android:textSize="30sp"
             android:paddingLeft="70dp"
             />
@@ -54,14 +56,17 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Baku"
+
                         android:layout_marginTop="30dp"
                         android:layout_marginLeft="65dp"
+                        android:id="@+id/fromshow"
 
                         />
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Baku"
+                        android:text="Antalya"
+                        android:id="@+id/toshow"
                         android:layout_marginTop="30dp"
                         android:layout_marginLeft="280dp"
                         />
@@ -74,13 +79,21 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0px"
-        android:layout_weight="0.1">
+        android:layout_weight="0.1"
+        android:background="@drawable/bg_round"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp">
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/bg_round"
+            >
 
             <Button
                 android:layout_width="match_parent"
@@ -107,48 +120,31 @@
     //****************************
 
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="0px"
-        android:layout_weight="0.1">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp">
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Jan 01 2021"
-                android:textSize="18dp"
-                android:textColor="@color/black"
-                style="?android:spinnerStyle"
-                android:id="@+id/inis"
-                android:onClick="openinis"
-                />
-
-
-        </LinearLayout>
-
-
-
-    </RelativeLayout>
 
     //****************************
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0px"
-        android:layout_weight="0.1">
+        android:layout_weight="0.1"
+        android:background="@drawable/bg_round"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="10dp"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/bg_round"
+            android:paddingTop="5dp"
+            >
             <TextView
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
@@ -168,44 +164,16 @@
 
     //****************************
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="0px"
-        android:layout_weight="0.1">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp">
-
-            <TextView
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:text="     Passenger 1"
-                android:textColor="@color/black"
-                />
-
-            <ImageButton
-                android:id="@+id/imageButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="#E2E4FF"
-                app:srcCompat="@drawable/plus"
-                tools:ignore="VectorDrawableCompat" />
-
-
-        </LinearLayout>
-
-    </RelativeLayout>
 
     //****************************
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0px"
-        android:layout_weight="0.1">
+        android:layout_weight="0.05"
+
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -215,7 +183,8 @@
 
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/buttonflight"
+                android:onClick="Flights"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -234,16 +203,24 @@
 
 
 
+
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0px"
-        android:layout_weight="0.1"
+        android:layout_weight="0.02"
+        android:layout_marginTop="15dp"
         android:layout_marginRight="40dp"
-        android:layout_marginLeft="40dp">
+        android:layout_marginLeft="40dp"
+
+
+
+        >
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            >
             <TextView
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
@@ -265,9 +242,11 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0px"
-        android:layout_weight="0.1"
+        android:layout_weight="0.02"
         android:layout_marginRight="40dp"
-        android:layout_marginLeft="40dp">
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="100dp">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

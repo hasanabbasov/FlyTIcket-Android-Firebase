@@ -9,6 +9,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.Spinner;
+import android.widget.TextView;
+
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Calendar;
 
@@ -17,19 +21,25 @@ public class ChooseDay extends AppCompatActivity {
     //For select Day
     private DatePickerDialog datePickerDialog, datePickerDialog2;
     private Button dateButton, dateButton2;
+    FirebaseDatabase database;
+    Spinner spinnerf;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_day);
+        database = FirebaseDatabase.getInstance();
 
         initDatePicker();
-        initDatePicker2();
+       // initDatePicker2();
         dateButton = findViewById(R.id.ucus);
         dateButton.setText(getTodaysDate());
 
-        dateButton2 = findViewById(R.id.inis);
-        dateButton2.setText(getTodaysDate());
+       // dateButton2 = findViewById(R.id.inis);
+       // dateButton2.setText(getTodaysDate());
 
     }
 
@@ -69,7 +79,7 @@ public class ChooseDay extends AppCompatActivity {
 
     //For inis
 
-    private void initDatePicker2() {
+   /* private void initDatePicker2() {
 
         DatePickerDialog.OnDateSetListener dateSetListener2 = new DatePickerDialog.OnDateSetListener() {
             @Override
@@ -89,7 +99,7 @@ public class ChooseDay extends AppCompatActivity {
         int style = AlertDialog.THEME_HOLO_LIGHT;
 
         datePickerDialog2 = new DatePickerDialog(this,style, dateSetListener2, year, month, day);
-    }
+    }*/
 
     private String makeDateString(int day, int month, int year) {
          return getMontFormat(month) + " " + day + " " + year;
@@ -151,8 +161,15 @@ public class ChooseDay extends AppCompatActivity {
         datePickerDialog.show();
     }
 
-    public void openinis(View view){
+
+    public void Flights(View view){
+        Intent intent = new Intent(this, TicketListActivity.class);
+        startActivity(intent);
+
+    }
+
+    /*public void openinis(View view){
 
         datePickerDialog2.show();
-    }
+    }*/
 }

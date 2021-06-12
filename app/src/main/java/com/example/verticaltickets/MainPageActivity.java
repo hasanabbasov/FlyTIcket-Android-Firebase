@@ -67,10 +67,10 @@ public class MainPageActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-           for (DataSnapshot chilSnapshot: snapshot.getChildren()) {
-               String spinnerCountry = chilSnapshot.child("country").getValue(String.class);
-               country.add(spinnerCountry);
-           }
+                for (DataSnapshot chilSnapshot: snapshot.getChildren()) {
+                    String spinnerCountry = chilSnapshot.child("country").getValue(String.class);
+                    country.add(spinnerCountry);
+                }
                 ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>( MainPageActivity.this, android.R.layout.simple_spinner_item,country);
                 arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
                 spinner.setAdapter(arrayAdapter);
@@ -106,7 +106,7 @@ public class MainPageActivity extends AppCompatActivity {
 
 
 
-       //**** Best Tour
+        //**** Best Tour
         //add some dummy data in our model class
         List<RecentsData> recentsDataList = new ArrayList<>();
         recentsDataList.add(new RecentsData(" Baku", "From 300$", R.drawable.baki));

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    android:orientation="vertical"
+    tools:context=".ChooseDay"
+    >
+
+
+
+    //****************************
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="0.02"
+        >
+
+        <ImageButton
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:background="#E2E4FF"
+            android:src="@drawable/ic_baseline_arrow_back_ios_24"
+            android:onClick="backfind2"
+            tools:ignore="OnClick" />
+
+        //****************************
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="0.01">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="0.25">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="o--------------------------o"
+
+                    android:textSize="30sp"
+                    android:paddingLeft="70dp"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Baku"
+
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="65dp"
+                    android:id="@+id/fromshow"
+
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Antalya"
+                    android:id="@+id/toshow"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="280dp"
+                    />
+
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+    //****************************
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="0.01"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="listed for you "
+                android:gravity="center"
+                android:textSize="16dp"
+                android:textColor="@color/black"/>
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    //******
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="0.1"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:id="@+id/listViewFlys"
+
+                />
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+    </LinearLayout>

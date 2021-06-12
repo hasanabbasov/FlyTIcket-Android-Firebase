@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.verticaltickets">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -11,17 +11,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.VerticalTickets">
-
-
-        <activity android:name=".AboutUs"></activity>
+        <activity android:name=".FlightInfoActivity"></activity>
+        <activity android:name=".TicketListActivity" />
+        <activity android:name=".AboutUs" />
         <activity android:name=".Dashboard" />
         <activity android:name=".MainPageActivity" />
         <activity android:name=".ChooseDay" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity" />
-
         <activity android:name=".MainActivity">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

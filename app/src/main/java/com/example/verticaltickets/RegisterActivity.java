@@ -50,10 +50,10 @@ public class RegisterActivity extends AppCompatActivity {
 
         // kullanıcı kayıtlı mı değil mi öğrenmek için;
 
-        if(mAuth.getCurrentUser() != null){
+     /*   if(mAuth.getCurrentUser() != null){
             startActivity(new Intent(getApplicationContext(), MainActivity.class));
             finish();
-        }
+        }*/
 
 
         mRegisterBtn.setOnClickListener(new View.OnClickListener() {
@@ -98,7 +98,8 @@ public class RegisterActivity extends AppCompatActivity {
 
                         if(task.isSuccessful()){
                             Toast.makeText(RegisterActivity.this, "User is created.", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                            startActivity(new Intent(getApplicationContext(), MainPageActivity.class));
+                            progressBar.setVisibility(View.GONE);
                         }
                         else{
                             Toast.makeText(RegisterActivity.this, "Error!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
@@ -110,6 +111,7 @@ public class RegisterActivity extends AppCompatActivity {
 
             }
         });
+        // Eğer kullanıcı kayıtlıysa;
         goToLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -119,80 +121,6 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
 
-    /* public void createUser(View view){
-
-        EditText editTextEmail = (EditText) findViewById(R.id.editTextTextEmailAddress);
-        String mail = editTextEmail.getText().toString();
-
-        EditText editTextPassword = (EditText) findViewById(R.id.editTextNumberPassword);
-        String password = editTextPassword.getText().toString();
-
-        EditText editTextPassword2 = (EditText) findViewById(R.id.editTextNumberPassword2);
-        String password2 = editTextPassword2.getText().toString();
-
-        EditText editName = (EditText) findViewById(R.id.editTextTextName);
-        String name = editName.getText().toString();
-
-        EditText editSurname = (EditText) findViewById(R.id.editTextTextSurName);
-        String surname = editSurname.getText().toString();
-
-        EditText editPhone = (EditText) findViewById(R.id.editTextPhoneNumber);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        Intent mainIntent = new Intent(this, MainPageActivity.class);
-        startActivity(mainIntent);
-
-        if (!password.equals(password2)) {
-            Toast.makeText(RegisterActivity.this, "Password or Confirm password must be the same.", Toast.LENGTH_SHORT).show();
-        }
-        else{
-            mAuth.createUserWithEmailAndPassword(mail, password)
-                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()){
-                                FirebaseUser user = mAuth.getCurrentUser();
-                                startActivity(mainIntent);
-                                System.out.println(user.getEmail());
-
-                            }
-                            else{
-                                Toast.makeText(RegisterActivity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-
-                            }
-
-                        }
-                    });
-        }
-    }
-
-    public void Transfer_Log(View view){
-        Intent intent = new Intent(this, LoginActivity.class);
-        startActivity(intent);
-
-    } */
 
 
 }
