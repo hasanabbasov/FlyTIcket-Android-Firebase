@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.VerticalTickets">
-        <activity android:name=".FlightInfoActivity"></activity>
+        <activity android:name=".SucceesPay"></activity>
+        <activity android:name=".paymentActivity" />
+        <activity android:name=".FlightInfoActivity" />
         <activity android:name=".TicketListActivity" />
         <activity android:name=".AboutUs" />
         <activity android:name=".Dashboard" />

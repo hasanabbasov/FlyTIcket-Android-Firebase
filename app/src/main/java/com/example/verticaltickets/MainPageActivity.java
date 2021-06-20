@@ -234,5 +234,10 @@ public class MainPageActivity extends AppCompatActivity {
             imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
         }
         return super.dispatchTouchEvent(ev);
+
+
     }
+    public void paymetss(View view) {
+        Intent intent = new Intent(this, paymentActivity.class);
+        startActivity(intent);}
 }

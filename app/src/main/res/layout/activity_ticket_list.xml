@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradient_background"
+    android:background="#E2E4FF"
     android:orientation="vertical"
     tools:context=".ChooseDay"
     >
@@ -111,19 +111,37 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="horizontal">
+
 
             <ListView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="380dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/button1"
 
-                android:id="@+id/listViewFlys"
+
+                android:id="@+id/listViewFlys2"
 
                 />
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="#E2E4FF"
+                android:backgroundTint="#E2E4FF"
+                android:onClick="paymets"
+
+                app:backgroundTint="#E2E4FF" />
+
 
 
         </LinearLayout>
     </RelativeLayout>
+
+
 
 
     </LinearLayout>
